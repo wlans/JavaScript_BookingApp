@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html laug="en">
 <head>
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="jsfortravelwebsite.js"></script>
 
 </head>
@@ -10,10 +13,10 @@
 
 
 <body>
-
-<div>
-	<h1> Welcome to Booking.com! 1.0 </h1>
-	<form method="post" onsubmit="bookingCalcDisplay(this); return false;">
+ <div class="container">
+	<h1> Welcome to Booking.com! 2.0 </h1>
+	<div class="container">
+	<form class="form-signin" method="post" onsubmit="bookingCalcDisplay(this); return false;">
 		<label>Full Name:</label> 
 		<input type="text" name="fullName" placeholder="Full Name" required>	<br>
 
@@ -27,28 +30,17 @@
 
 		Nationality:
 		<label class="radio-inline">
-		<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="USA" checked>USA
+		<input type="radio" name="nationality" id="inlineRadio1" value="USA" checked>USA
 		</label>
 		<label class="radio-inline">
-		<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Canada">Canada
+		<input type="radio" name="nationality" id="inlineRadio2" value="Canada">Canada
 		</label>	
 		<label class="radio-inline">
-		<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Mexico">Mexico
+		<input type="radio" name="nationality" id="inlineRadio3" value="Mexico">Mexico
 		</label>
 		<label class="radio-inline">	
-		<input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="Other">Other
+		<input type="radio" name="nationality" id="inlineRadio4" value="Other">Other
 		</label>
-
-		<label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
-</label>
-<label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
-</label>
-<label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
-</label>
-
 
 		<br>
 		<label>Number of days traveling:</label>
@@ -66,11 +58,12 @@
 
 		<button type="submit" class="btn btn-primary">Book</button>
 	</form>
-</div>
+</div> <!-- /container -->
 <br>
 
 	<div id="results">
 	</div>
+	 </div> <!-- /container -->
 
 
 </body>

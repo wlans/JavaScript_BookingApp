@@ -7,7 +7,7 @@ function bookingCalcDisplay (form) {
 	 var spouseTraveling = form.spouseTraveling.checked;
 	 var resultsDIVtochange = document.getElementById("results"); 
 
-	 resultsDIVtochange.innerHTML = "Hi, " + fullName + " your traveling to " + destinationCity + " and your booking cost is " + costOfbooking(destinationCity,daysTraveling,firstClasstravel,spouseTraveling) + " dollars. " + passportNeeded(destinationCity,nationality);    
+	 resultsDIVtochange.innerHTML = "Hi, " + fullName + " you are traveling to " + destinationCity + " and your booking cost is " + costOfbooking(destinationCity,daysTraveling,firstClasstravel,spouseTraveling) + " dollars. " + passportNeeded(destinationCity,nationality) + extraTraveloptions(spouseTraveling,firstClasstravel);    
 }
 
 function costOfbooking (destinationCity,daysTraveling,firstClasstravel,spouseTraveling) {
@@ -44,6 +44,20 @@ function passportNeeded (destinationCity,nationality) {
 	} else if (nationality !== "Mexico" && destinationCity === "Mexico City") {
 		return "You are from " + nationality + " and are traveling to " + destinationCity + " so you will need to bring your passport!";
 	} else {
-		return "" ;
+		return "You are from " + nationality + " and are traveling to " + destinationCity + " so you will not need to bring your passport!";  ;
 	};
+};
+
+function extraTraveloptions (spouseTraveling,firstClasstravel) {
+	var extraTraveloptionsvar = "";
+
+	if (spouseTraveling === true) {
+		extraTraveloptionsvar += " You are traveling with your spouse so we times the total by two. "
+	}
+	else if (firstClasstravel === true) {
+		extraTraveloptionsvar += " You are traveling First Class. Enjoy "
+	} else {
+		extraTraveloptionsvar === ""
+	};
+	return extraTraveloptionsvar; 
 };
