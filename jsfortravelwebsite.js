@@ -2,10 +2,11 @@ function bookingCalcDisplay (form) {
 	 var fullName = form.fullName.value;
 	 var destinationCity = form.destinationCity.value;
 	 var nationality = form.nationality.value;
-	 var daysTraveling = form.daysTraveling.value;
+	 var daysTraveling = parseInt(form.daysTraveling.value);
 	 var firstClasstravel = form.firstClasstravel.checked;
 	 var spouseTraveling = form.spouseTraveling.checked;
 	 var resultsDIVtochange = document.getElementById("results"); 
+
 
 	 resultsDIVtochange.innerHTML = "Hi, " + fullName + " you are traveling to " + destinationCity + " and your booking cost is " + costOfbooking(destinationCity,daysTraveling,firstClasstravel,spouseTraveling) + " dollars. " + passportNeeded(destinationCity,nationality) + extraTraveloptions(spouseTraveling,firstClasstravel);    
 }
@@ -51,7 +52,10 @@ function passportNeeded (destinationCity,nationality) {
 function extraTraveloptions (spouseTraveling,firstClasstravel) {
 	var extraTraveloptionsvar = "";
 
-	if (spouseTraveling === true) {
+	if (spouseTraveling === true && firstClasstravel === true) {
+		extraTraveloptionsvar += " You are traveling First Class with your spouse so we added on 400 dollars and times the total by two. "
+	}
+	else if (spouseTraveling === true ) {
 		extraTraveloptionsvar += " You are traveling with your spouse so we times the total by two. "
 	}
 	else if (firstClasstravel === true) {
