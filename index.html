@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html laug="en">
+<head>
+
+<script type="text/javascript" src="jsfortravelwebsite.js"></script>
+</head>
+
+<body>
+
+<div>
+	<h1> Welcome to Booking.com! 1.0 </h1>
+	<form method="post" onsubmit="bookingCalcDisplay(this); return false;">
+		<label>Full Name:</label> 
+		<input type="text" name="fullName" placeholder="Full Name" required>	<br>
+
+		<label>Destination:</label>
+		<select name="destinationCity">
+			<option>New York</option>
+			<option>Los Angeles</option>
+			<option>Miami</option>
+			<option>Mexico City</option>
+		</select> <br>
+
+		<label>Nationality:</label> <br>
+		<input type="radio" name="nationality" value="USA" checked>USA <br>
+		<input type="radio" name="nationality" value="Canada">Canada <br>
+		<input type="radio" name="nationality" value="Mexico">Mexico <br>
+		<input type="radio" name="nationality" value="Other">Other <br>	
+
+
+		<br>
+		<label>Number of days traveling:</label>
+		<input type="number" name="daysTraveling" value="1" min="1" max="365" required>	<br> <br>
+
+		<label>First Class Travel:</label>
+		<input type="checkbox" name="firstClasstravel" value="Bike">
+
+
+		<br>
+		<label>Travelling With Spouse:</label>
+		<input type="checkbox" name="spouseTraveling">
+
+		<br> <br>
+
+		<button type="submit" >Submit
+		</button>
+	</form>
+</div>
+<br>
+
+	<div id="results">
+	</div>
+
+
+</body>
+</html>
