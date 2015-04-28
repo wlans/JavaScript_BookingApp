@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html laug="en">
 <head>
-
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<script src="bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="jsfortravelwebsite.js"></script>
+
 </head>
+
+
 
 <body>
 
@@ -21,11 +25,29 @@
 			<option>Mexico City</option>
 		</select> <br>
 
-		<label>Nationality:</label> <br>
-		<input type="radio" name="nationality" value="USA" checked>USA <br>
-		<input type="radio" name="nationality" value="Canada">Canada <br>
-		<input type="radio" name="nationality" value="Mexico">Mexico <br>
-		<input type="radio" name="nationality" value="Other">Other <br>	
+		Nationality:
+		<label class="radio-inline">
+		<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="USA" checked>USA
+		</label>
+		<label class="radio-inline">
+		<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Canada">Canada
+		</label>	
+		<label class="radio-inline">
+		<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Mexico">Mexico
+		</label>
+		<label class="radio-inline">	
+		<input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="Other">Other
+		</label>
+
+		<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
+</label>
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
+</label>
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
+</label>
 
 
 		<br>
@@ -42,8 +64,7 @@
 
 		<br> <br>
 
-		<button type="submit" >Submit
-		</button>
+		<button type="submit" class="btn btn-primary">Book</button>
 	</form>
 </div>
 <br>
