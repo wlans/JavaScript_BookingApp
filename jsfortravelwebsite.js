@@ -5,11 +5,19 @@ function bookingCalcDisplay (form) {
 	 var daysTraveling = parseInt(form.daysTraveling.value);
 	 var firstClasstravel = form.firstClasstravel.checked;
 	 var spouseTraveling = form.spouseTraveling.checked;
-	 var resultsDIVtochange = document.getElementById("results"); 
-
-
-	 resultsDIVtochange.innerHTML = "Hi, " + fullName + " you are traveling to " + destinationCity + " and your booking cost is " + costOfbooking(destinationCity,daysTraveling,firstClasstravel,spouseTraveling) + " dollars. " + passportNeeded(destinationCity,nationality) + extraTraveloptions(spouseTraveling,firstClasstravel);    
-}
+	 var resultsDIVtochange = document.getElementById("results");
+	 var errorForForm = document.getElementById("errorForForm");
+	 if (validation(fullName,daysTraveling) === true) {
+	 	 errorForForm.innerHTML = "";
+	 	 resultsDIVtochange.innerHTML = "Hi, " + fullName + " you are traveling to " + destinationCity + " and your booking cost is " + costOfbooking(destinationCity,daysTraveling,firstClasstravel,spouseTraveling) + " dollars. " + passportNeeded(destinationCity,nationality) + extraTraveloptions(spouseTraveling,firstClasstravel);
+	 	 	
+	 }
+	 else {
+	  errorForForm.innerHTML = "Please make sure your full name contains only letters and that you have entered number for the number of days you are traveling.";
+	  resultsDIVtochange.innerHTML = "";
+	 }; 
+	
+};
 
 function costOfbooking (destinationCity,daysTraveling,firstClasstravel,spouseTraveling) {
 	var dayCostforMiamiandMeixco = 200;
@@ -64,4 +72,11 @@ function extraTraveloptions (spouseTraveling,firstClasstravel) {
 		extraTraveloptionsvar === ""
 	};
 	return extraTraveloptionsvar; 
+};
+
+function validation (fullName,daysTraveling) {
+	var reqExpForLettersValidtion = /^[a-zA-Z]+$/;
+	if (reqExpForLettersValidtion.test(fullName) && !isNaN(daysTraveling)) {
+		return true;
+	}
 };
